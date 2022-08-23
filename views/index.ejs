@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+<title>Xmeme Page</title>
+<link rel="stylesheet"  href="/css/bootstrap.min.css">
+<link rel="stylesheet"  href="/css/styles.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<script src="../routes/admin.js"></script>
+</head>
+<body>
+    <div class="base">
+        <h2>MEME STREAM</h2>
+    <div>
+        <form  method="POST" id="api_crud_form" action="/admin">
+         <div class="form-group">
+         <label for="name">Meme Owner</label>
+         <input type="text" class="form-control"  name='name' placeholder="Enter your full name" required class="form-control">
+         </div>
+
+         <div class="form-group">
+         <label for="caption">Caption</label>
+         <input type="text" class="form-control"  name='caption' placeholder="Be creative with the caption" required class="form-control">
+         </div>
+    
+         <div class="form-group">
+         <label for="url">Url</label>
+         <div class="input-group mb-3">
+         <input type="text" class="form-control"  name="url" placeholder="Enter Url of your meme here" required class="form-control">
+
+         
+        <div class="input-group-append">
+             <button class="btn btn-primary" type="submit" name="button_action">SUBMIT</button>
+      </div>
+
+         </div>
+         </div>
+
+         <div class="display">
+        
+            <% data.reverse().forEach(function(m) { %>
+                <div class="container">
+                        <div class = "icon">
+                            <a href ="./edit/<%= m._id%>""><i class ="bi bi-pencil-square"></i></a>
+                            <a href ="/admin/delete/<%= m._id %>"" onclick="return confirm('Are you sure to delete this meme ?');">
+                            <i class=" bi bi-trash"></i></a>
+                        </div>
+                        <p class="meme"><%= m.name %></p>
+                        <p class="caption"><%= m.caption %></p>
+                        <div class="Image"><img src=" <%= m.url %>"></div>
+
+                </div>  
+            <% }); %>     
+        
+
+
+    </div>
+
+        </form> 
+    </div>
+ 
+    
+</div>
+  
+</body>
+</html>
+

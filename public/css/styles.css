@@ -1,0 +1,38 @@
+.base{
+	padding:10px 20% 10px 20%;
+}
+h2{
+    padding-top:5%
+}
+
+.display
+{
+	overflow-y: auto;
+	overflow-x: hidden; 
+	border-top: 1px black solid;
+	height: 700px;
+}
+
+.container
+{
+	border: 1px black solid;
+	margin-bottom:10px;
+	width: 40%;
+	position: relative;
+}
+.icon{
+	position: absolute;
+	top: 0;
+	right:0;
+	height: 10%;
+	width: 10%;
+}
+.container img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit:cover;
+}
+
+.container p{
+	word-wrap: break-word;
+}
